@@ -1,0 +1,261 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 9,
+    "passes": 7,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-06-03T13:47:55.979Z",
+    "end": "2022-06-03T13:48:13.034Z",
+    "duration": 17055,
+    "testsRegistered": 9,
+    "passPercent": 77.77777777777779,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4ac25184-c906-4bc9-ac5c-cf6d9e39379f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test.spec\\test.cy.js",
+      "file": "cypress\\e2e\\test.spec\\test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0779d96c-69fc-4798-a934-13141aac8ea8",
+          "title": "Test Login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Are all elements present",
+              "fullTitle": "Test Login page Are all elements present",
+              "timedOut": null,
+              "duration": 1349,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.wrapper.should('be.visible');\n_login.default.logo.should('be.visible');\n_login.default.header.should('be.visible');\n_login.default.userInput.should('be.visible');\n_login.default.passwordInput.should('be.visible');\n_login.default.loginButton.should('be.visible');",
+              "err": {},
+              "uuid": "c299954d-1826-4695-bc00-3484f866c706",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with valid credantials",
+              "fullTitle": "Test Login page Login with valid credantials",
+              "timedOut": null,
+              "duration": 1112,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.usernameError.should('not.be.visible');\n_login.default.loginWithValidCredentials();\n_login.default.usernameError.should('be.visible').should('have.text', 'No account found with that username.');",
+              "err": {},
+              "uuid": "020f917e-85b9-4568-98fa-69214cc613a6",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with no credantials",
+              "fullTitle": "Test Login page Login with no credantials",
+              "timedOut": null,
+              "duration": 400,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.usernameError.should('not.be.visible');\n_login.default.loginButton.click();\n_login.default.usernameError.should('be.visible').should('have.text', 'Please enter username.');\n_login.default.passwordError.should('be.visible').should('have.text', 'Please enter your password.');",
+              "err": {},
+              "uuid": "102d7d97-dedc-4a45-8ea0-b373a68bac21",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with empty username input",
+              "fullTitle": "Test Login page Login with empty username input",
+              "timedOut": null,
+              "duration": 526,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.usernameError.should('not.be.visible');\n_login.default.loginWithEmptyUsername();\n_login.default.usernameError.should('be.visible').should('have.text', 'Please enter username.');",
+              "err": {},
+              "uuid": "464a0acc-a855-4ebf-a7a2-1057a31fa1e2",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with space into username input",
+              "fullTitle": "Test Login page Login with space into username input",
+              "timedOut": null,
+              "duration": 661,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.usernameError.should('not.be.visible');\n_login.default.loginWithSpaceIntoUsername();\n_login.default.usernameError.should('be.visible').should('have.text', 'Please enter username.');",
+              "err": {},
+              "uuid": "5e66b87c-7840-4cdb-a1ea-40252ce9ed07",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with HTML into username input",
+              "fullTitle": "Test Login page Login with HTML into username input",
+              "timedOut": null,
+              "duration": 4521,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.usernameError.should('not.be.visible');\n_login.default.loginWitHTMLIntoUsername; // Login form shouldn't take on a value HTML code. Should show Error message. So test should falls.\n_login.default.usernameError.should('be.visible').should('have.text', 'Please enter username.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.help-block>' to be 'visible'\n\nThis element `<span.help-block>` is not visible because it has an effective width and height of: `400 x 0` pixels.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.help-block>' to be 'visible'\n\nThis element `<span.help-block>` is not visible because it has an effective width and height of: `400 x 0` pixels.\n    at Context.eval (https://www.pecodesoftware.com/__cypress/tests?p=cypress\\e2e\\test.spec\\test.cy.js:314:34)",
+                "diff": null
+              },
+              "uuid": "dada3621-8528-4153-8d8a-7def29789c25",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with empty password input",
+              "fullTitle": "Test Login page Login with empty password input",
+              "timedOut": null,
+              "duration": 767,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.passwordError.should('not.be.visible');\n_login.default.loginWithEmptyPassword();\n_login.default.passwordError.should('be.visible').should('have.text', 'Please enter your password.');",
+              "err": {},
+              "uuid": "aedd88ed-f263-4f70-ae7a-9f90c4591a98",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with space into password input",
+              "fullTitle": "Test Login page Login with space into password input",
+              "timedOut": null,
+              "duration": 837,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.passwordError.should('not.be.visible');\n_login.default.loginWithSpaceIntoPassword();\n_login.default.passwordError.should('be.visible').should('have.text', 'Please enter your password.');",
+              "err": {},
+              "uuid": "6be7b915-ee05-4158-8146-c95736273b6a",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with HTML into password input",
+              "fullTitle": "Test Login page Login with HTML into password input",
+              "timedOut": null,
+              "duration": 4452,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.passwordError.should('not.be.visible');\n_login.default.loginWitHTMLIntoPassword; // Login form shouldn't take on a value HTML code. Should show Error message. So test should falls. \n_login.default.passwordError.should('be.visible').should('have.text', 'Please enter your password.');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.help-block>' to be 'visible'\n\nThis element `<span.help-block>` is not visible because it has an effective width and height of: `400 x 0` pixels.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.help-block>' to be 'visible'\n\nThis element `<span.help-block>` is not visible because it has an effective width and height of: `400 x 0` pixels.\n    at Context.eval (https://www.pecodesoftware.com/__cypress/tests?p=cypress\\e2e\\test.spec\\test.cy.js:335:34)",
+                "diff": null
+              },
+              "uuid": "10fd86dd-a90d-4c02-9909-4ae96538db80",
+              "parentUUID": "0779d96c-69fc-4798-a934-13141aac8ea8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c299954d-1826-4695-bc00-3484f866c706",
+            "020f917e-85b9-4568-98fa-69214cc613a6",
+            "102d7d97-dedc-4a45-8ea0-b373a68bac21",
+            "464a0acc-a855-4ebf-a7a2-1057a31fa1e2",
+            "5e66b87c-7840-4cdb-a1ea-40252ce9ed07",
+            "aedd88ed-f263-4f70-ae7a-9f90c4591a98",
+            "6be7b915-ee05-4158-8146-c95736273b6a"
+          ],
+          "failures": [
+            "dada3621-8528-4153-8d8a-7def29789c25",
+            "10fd86dd-a90d-4c02-9909-4ae96538db80"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14625,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
