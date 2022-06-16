@@ -59,7 +59,7 @@ describe('Test Login page', () => {
 
     it('Login with HTML into password input', () => {
         loginPage.passwordError.should('not.be.visible');
-        loginPage.loginWitHTMLIntoPassword;
+        loginPage.loginWitHTMLIntoPassword();
         // Login form shouldn't take on a value HTML code. Should show Error message. So test should falls. 
         loginPage.passwordError.should('be.visible').should('have.text', 'Please enter your password.');
     });
